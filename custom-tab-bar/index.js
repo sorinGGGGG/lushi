@@ -5,21 +5,27 @@ Component({
       selectedColor: "#1296db",
       list:  [{
         "pagePath": "/pages/index/index",
-        "text": "首页",
-        "iconPath": "../img/home.png",
-        "selectedIconPath": "../img/home_c.png"
+        "text": "项目中心",
+        "iconPath": "../img/one.png",
+        "selectedIconPath": "../img/onechoose.png"
     },
     {
-        "pagePath": "/pages/myWallet/myWallet",
-        "text": "钱包",
-        "iconPath": "../img/wallet.png",
-        "selectedIconPath": "../img/wallet_c.png"
+        "pagePath": "/pages/IntelligentMatching/IntelligentMatching",
+        "text": "智能匹配",
+        "iconPath": "../img/two.png",
+        "selectedIconPath": "../img/twochoose.png"
     },
     {
-        "pagePath": "/pages/mine/mine",
-        "text": "我的",
-        "iconPath": "../img/mine.png",
-        "selectedIconPath": "../img/mine_c.png"
+        "pagePath": "/pages/PatentApplication/PatentApplication",
+        "text": "专利申请",
+        "iconPath": "../img/three.png",
+        "selectedIconPath": "../img/threechoose.png"
+    },
+    {
+        "pagePath": "/pages/serviceCentre/serviceCentre",
+        "text": "服务中心",
+        "iconPath": "../img/four.png",
+        "selectedIconPath": "../img/fourchoose.png"
     }
 ]
     },
