@@ -1,4 +1,4 @@
 <view class="padding flex flex-direction login">
-    <button class="cu-btn bg-yellow round lg" role='button' aria-disabled="false">账号登录</button>
-    <button class="cu-btn bg-green round lg margin-top" role='button' aria-disabled="false">微信登录</button>
+    <button class="cu-btn bg-yellow round lg" role='button' bindtap="login" aria-disabled="false">账号登录</button>
+    <button class="cu-btn bg-green round lg margin-top" bindtap="loginwx" role='button' aria-disabled="false">微信登录</button>
 </view>

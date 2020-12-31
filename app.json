@@ -1,9 +1,9 @@
 {
   "pages": [
-    
+    "pages/start/start",
     "pages/login/login",
     "pages/register/register",
-    "pages/start/start",
+    
     "pages/index/index",
     
     "pages/IntelligentMatching/IntelligentMatching",

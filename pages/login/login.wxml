@@ -9,4 +9,5 @@
 
 <view class="padding-lg flex flex-direction">
   <button class="cu-btn bg-green round lg">登录</button>
+  <button class="cu-btn bg-yellow margin-top-sm round lg" bindtap="register">注册</button>
 </view>
