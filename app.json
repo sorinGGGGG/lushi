@@ -1,9 +1,15 @@
 {
   "pages": [
+    
+    "pages/login/login",
+    "pages/register/register",
+    "pages/start/start",
     "pages/index/index",
+    
     "pages/IntelligentMatching/IntelligentMatching",
     "pages/PatentApplication/PatentApplication",
     "pages/serviceCentre/serviceCentre",
+    
     "pages/logs/logs"
   ],
   "tabBar": {

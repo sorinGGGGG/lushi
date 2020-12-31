@@ -1,0 +1,6 @@
+/* pages/login/login.wxss */
+.login{
+    width: 100vw;
+    height: 20vh;
+    margin-top: 70vh;
+}

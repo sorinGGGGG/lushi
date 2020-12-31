@@ -1,0 +1,12 @@
+<view class="cu-form-group margin-top">
+    <view class="title">用户名</view>
+    <input placeholder="统一标题的宽度"></input>
+</view>
+<view class="cu-form-group margin-top-xs">
+    <view class="title">密码</view>
+    <input type="password" placeholder="统一标题的宽度"></input>
+</view>
+
+<view class="padding-lg flex flex-direction">
+  <button class="cu-btn bg-green round lg">登录</button>
+</view>
