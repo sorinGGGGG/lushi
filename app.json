@@ -1,11 +1,11 @@
 {
   "pages": [
+    
+    
+    "pages/index/index",
     "pages/start/start",
     "pages/login/login",
     "pages/register/register",
-    
-    "pages/index/index",
-    
     "pages/IntelligentMatching/IntelligentMatching",
     "pages/PatentApplication/PatentApplication",
     "pages/serviceCentre/serviceCentre",
