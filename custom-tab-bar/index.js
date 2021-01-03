@@ -2,7 +2,7 @@ Component({
     data: {
       selected: 0,
       color: "#000000",
-      selectedColor: "#1296db",
+      selectedColor: "#d4237a",
       list:  [{
         "pagePath": "/pages/index/index",
         "text": "项目中心",
