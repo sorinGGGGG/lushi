@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    height: 0, //减去tabbar的高度
+    lgHeight: 0, //最大高度
   }
 })
