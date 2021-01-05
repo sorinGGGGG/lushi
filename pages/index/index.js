@@ -35,12 +35,14 @@ Page({
     }],
     TabCur: 0,
     scrollHeight: "100vh;",
-    topHeight: 0
+    topHeight: 0,
+    topNum: 0
   },
 
-  tabSelect(e) {
+  //切换界面时弹回页面顶部
+  gotop() {
     this.setData({
-      TabCur: e.currentTarget.dataset.id,
+      topNum: 0
     })
   },
 
@@ -65,25 +67,25 @@ Page({
     //选择id
     query.select('#mjltest').boundingClientRect()
     query.exec(function (res) {
-        // console.log(res);
-        var height = getApp().globalData.height - res[0].height
-        that.setData({
-            scrollHeight: height,
-            topHeight: res[0].height
-        })
+      // console.log(res);
+      var height = getApp().globalData.height - res[0].height
+      that.setData({
+        scrollHeight: height,
+        topHeight: res[0].height
+      })
     })
 
     var query = wx.createSelectorQuery();
     //选择id
     query.select('#mjltest2').boundingClientRect()
     query.exec(function (res) {
-        // console.log(res);
-        var height = that.data.scrollHeight - res[0].height
-        var topheight = that.data.topHeight + res[0].height
-        that.setData({
-            scrollHeight: height + "px;",
-            topHeight: topheight + "px"
-        })
+      // console.log(res);
+      var height = that.data.scrollHeight - res[0].height
+      var topheight = that.data.topHeight + res[0].height
+      that.setData({
+        scrollHeight: height + "px;",
+        topHeight: topheight + "px"
+      })
     })
   },
 
@@ -95,5 +97,13 @@ Page({
       })
     }
     this.onLoad()
+  },
+
+  //切换页面时触发
+  handleItemChange(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+    })
+    console.log(e);
   },
 })

@@ -9,7 +9,7 @@
     </swiper>
 
     <scroll-view id="mjltest2" scroll-x class="bg-pink nav text-center">
-        <view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{8}}" wx:key="item" bindtap="tabSelect"
+        <view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{8}}" wx:key="item" bindtap="handleItemChange"
             data-id="{{index}}">
             Tab{{index}}
         </view>
