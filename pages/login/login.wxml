@@ -1,13 +1,25 @@
-<view class="cu-form-group margin-top">
+<view>
+  <view class="cu-form-group margin-top">
     <view class="title">用户名</view>
-    <input placeholder="统一标题的宽度"></input>
-</view>
-<view class="cu-form-group margin-top-xs">
+    <input placeholder="请输入用户名" bindinput="username" value="{{username}}"></input>
+  </view>
+  <view class="cu-form-group margin-top">
     <view class="title">密码</view>
-    <input type="password" placeholder="统一标题的宽度"></input>
+    <input type="password" placeholder="请输入密码" bindinput="userpwd" value="{{userpwd}}"></input>
+  </view>
+</view>
+
+<view class="cu-form-group margin-top justify-between">
+  <view>
+    <text class="title text-pink" bindtap="register">注册账号</text>
+  </view>
+  <view class="flex align-center" bindtap="check">
+    <view class="title">记住密码</view>
+    <checkbox checked="{{ischeck}}"></checkbox>
+  </view>
 </view>
 
 <view class="padding-lg flex flex-direction">
-  <button class="cu-btn bg-green round lg">登录</button>
-  <button class="cu-btn bg-yellow margin-top-sm round lg" bindtap="register">注册</button>
+  <button class="cu-btn bg-green round lg" bindtap="login">登录</button>
+  <!-- <button class="cu-btn bg-yellow margin-top-sm round lg" bindtap="register">注册</button> -->
 </view>
