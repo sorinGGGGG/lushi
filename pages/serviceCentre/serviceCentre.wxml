@@ -1,2 +1,30 @@
-<!--pages/serviceCentre/serviceCentre.wxml-->
-<text>服务中心</text>
+<scroll-view style="height:{{scrollHeight}}" scroll-y="true">
+    <view class="cu-list menu-avatar margin-top-xs">
+        <view class="cu-item">
+            <view class="cu-avatar round lg bg-pink"></view>
+            <view class="content flex-sub">
+                <view class="text-grey">湖南株洲王金华有限公司</view>
+                <view class="text-gray text-sm flex justify-between align-center">
+                    <text>ID:1516761227</text>
+                    <view class="text-gray text-sm flex align-center">
+                        <text>联系人:王金华</text>
+                        <view class="cu-tag bg-{{isDetails?'pink':'green'}} margin-left-sm" bindtap="isDetails">{{showDetails}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{isDetails}}" style="margin-left:1vw;width:98vw" class="bg-white margin-top-xs">
+        <view class="padding-xs">注册资本: 10000万</view>
+        <view class="padding-xs">成立日期: 2021-01-06</view>
+        <view class="padding-xs">联系电话: 17872595972</view>
+        <view class="padding-xs">企业地址: 中国湖南省株洲市荷塘区水仙路</view>
+        <view class="padding-xs flex align-center"><text>是否高新: </text><text class="cu-tag bg-{{isHighNew?'green':'pink'}}">{{isHighNew?'高新企业':'否'}}</text></view>
+        <view class="padding-xs">专利情况: 无</view>
+    </view>
+
+    <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
+    <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
+    <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
+</scroll-view>
