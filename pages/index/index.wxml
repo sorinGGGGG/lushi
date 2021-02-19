@@ -1,21 +1,41 @@
 <view class="container">
-    <swiper id="mjltest" class="bg-white card-swiper round-dot" indicator-dots="true" circular="true" autoplay="true"
-        interval="5000" duration="500" indicator-color="#8799a3" indicator-active-color="#0081ff">
-        <swiper-item wx:for="{{swiperList}}" wx:key="item" class="{{cardCur==index?'cur':''}}">
-            <view class="swiper-item">
-                <image src="{{item.url}}" mode="aspectFill"></image>
-            </view>
-        </swiper-item>
-    </swiper>
-
-    <scroll-view id="mjltest2" scroll-x class="bg-pink nav text-center">
-        <view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{8}}" wx:key="item" bindtap="handleItemChange"
-            data-id="{{index}}">
-            Tab{{index}}
+    <view id="mjltest" class="flex">
+        <view style="margin-left:4%;width:28%" class="padding-sm">
+            <picker bindchange="PickerChange" value="{{index}}" range="{{picker1}}">
+                <view class="picker flex justify-center">
+                    <text>{{index?picker[index]:'狂野卡牌'}}</text>
+                </view>
+            </picker>
         </view>
-    </scroll-view>
 
-    <scroll-view style="height:{{scrollHeight}}" class="scroll" scroll-y="true" scroll-top="{{topNum}}">
-        <view wx:for="{{50}}" wx:key="item">1111</view>
+        <view style="margin-left:4%;width:28%" class="padding-sm">
+            <picker bindchange="PickerChange" value="{{index}}" range="{{picker2}}">
+                <view class="picker flex justify-center">
+                    <text>{{index?picker[index]:'全职业'}}</text>
+                </view>
+            </picker>
+        </view>
+
+        <view style="margin-left:4%;width:28%" class="padding-sm">
+            <picker bindchange="PickerChange" value="{{index}}" range="{{picker3}}">
+                <view class="picker flex justify-center">
+                    <text>{{index?picker[index]:'全水晶'}}</text>
+                </view>
+            </picker>
+        </view>
+    </view>
+
+    <view id="mjltest2" class="cu-bar search bg-white">
+        <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="请输入关键字" confirm-type="search"></input>
+        </view>
+        <view class="action">
+            <button class="cu-btn bg-green shadow-blur round">搜索</button>
+        </view>
+    </view>
+
+    <scroll-view style="height:{{scrollHeight}}" scroll-y="true">
+        
     </scroll-view>
 </view>

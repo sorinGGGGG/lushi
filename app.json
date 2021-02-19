@@ -19,25 +19,25 @@
     "backgroundColor": "#ffffff",
     "list": [{
         "pagePath": "pages/index/index",
-        "text": "项目中心",
+        "text": "卡牌",
         "iconPath": "./img/one.png",
         "selectedIconPath": "./img/onechoose.png"
     },
     {
         "pagePath": "pages/IntelligentMatching/IntelligentMatching",
-        "text": "智能匹配",
+        "text": "战棋",
         "iconPath": "./img/two.png",
         "selectedIconPath": "./img/twochoose.png"
     },
     {
         "pagePath": "pages/PatentApplication/PatentApplication",
-        "text": "专利申请",
+        "text": "流行卡组",
         "iconPath": "./img/three.png",
         "selectedIconPath": "./img/threechoose.png"
     },
     {
         "pagePath": "pages/serviceCentre/serviceCentre",
-        "text": "服务中心",
+        "text": "战棋流派",
         "iconPath": "./img/four.png",
         "selectedIconPath": "./img/fourchoose.png"
     }]

@@ -1,5 +1,5 @@
 <scroll-view style="height:{{scrollHeight}}" scroll-y="true">
-    <view class="cu-list menu-avatar margin-top-xs">
+    <view class="cu-list menu-avatar">
         <view class="cu-item">
             <view class="cu-avatar round lg bg-pink"></view>
             <view class="content flex-sub">

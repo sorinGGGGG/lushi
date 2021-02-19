@@ -21,20 +21,22 @@
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
-        "useMultiFrameRuntime": false,
+        "useMultiFrameRuntime": true,
         "useApiHook": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
             "outputPath": ""
         },
+        "enableEngineNative": false,
         "useIsolateContext": true,
         "useCompilerModule": true,
         "userConfirmedUseCompilerModuleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
-        "enableEngineNative": false,
-        "minifyWXSS": true
+        "minifyWXSS": true,
+        "bundle": false,
+        "useApiHostProcess": false
     },
     "compileType": "miniprogram",
     "libVersion": "2.14.1",

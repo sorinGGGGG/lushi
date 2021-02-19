@@ -4,46 +4,13 @@ const app = getApp()
 
 Page({
   data: {
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
-    }, {
-      id: 1,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
-    }],
+    picker1: ['狂野卡牌', '标准卡牌'],
+    picker2: ['全职业', '恶魔猎手', '德鲁伊', '猎人', '法师', '圣骑士', '牧师', '潜行者', '萨满', '术士', '战士', '中立'],
+    picker3: ['全水晶', '0', '1', '2', '3', '4', '5', '6', '7+'],
     TabCur: 0,
     scrollHeight: "100vh;",
     topHeight: 0,
     topNum: 0
-  },
-
-  //切换界面时弹回页面顶部
-  gotop() {
-    this.setData({
-      topNum: 0
-    })
   },
 
   onLoad: function () {
@@ -99,11 +66,4 @@ Page({
     this.onLoad()
   },
 
-  //切换页面时触发
-  handleItemChange(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-    })
-    console.log(e);
-  },
 })
