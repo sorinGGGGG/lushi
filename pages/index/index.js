@@ -4,6 +4,11 @@ const app = getApp()
 
 Page({
   data: {
+    isBottom:false,
+    maxPage: 0,
+    index1: null,
+    index2: null,
+    index3: null,
     list: {},
     picker1: ['狂野卡牌', '标准卡牌'],
     picker2: ['恶魔猎手', '德鲁伊', '猎人', '法师', '圣骑士', '牧师', '潜行者', '萨满', '术士', '战士', '中立'],
@@ -13,13 +18,13 @@ Page({
     topHeight: 0,
     topNum: 0,
     data: {
-      cardClass: 'demonhunter',
-      p: '1',
-      standard: '1',
-      cardSet: '',
-      keywords: '',
-      t: '',
-      cost: '',
+      cardClass: 'demonhunter', //职业
+      p: 1, //页数
+      standard: '0', //模式
+      cardSet: '', //卡包
+      keywords: '', //关键词
+      t: '', //时间
+      cost: '', //费用
     }
   },
 
@@ -70,7 +75,7 @@ Page({
     }
   },
 
-  query() {
+  query(flag) {
     var that = this
     that.data.data.t = Date.parse(new Date());
     wx.request({
@@ -82,12 +87,143 @@ Page({
         'Authorization': getApp().globalData.access_token
       },
       success(res) {
-        console.log(res.data);
+        var list = res.data.cards
+        // console.log(list);
+        if (flag) {
+          list.forEach(element => {
+            that.data.list.push(element)
+          });
+
+          list = that.data.list
+        }
+
         that.setData({
-          list: res.data
+          list: list,
+          maxPage: res.data.totalPage
         })
       }
     });
+  },
+
+  standardChange(e) {
+    // console.log(e);
+    switch (e.detail.value) {
+      case '0':
+        this.data.data.standard = 0;
+        this.data.data.p = 1;
+        break;
+      case '1':
+        this.data.data.standard = 1;
+        this.data.data.p = 1;
+        break;
+    }
+    this.setData({
+      index1: e.detail.value,
+      topNum: 0
+    })
+    this.query()
+  },
+
+  cardClassChange(e) {
+    // console.log(e);
+    switch (e.detail.value) {
+      case '0':
+        this.data.data.cardClass = 'demonhunter';
+        this.data.data.p = 1;
+        break;
+      case '1':
+        this.data.data.cardClass = 'druid';
+        this.data.data.p = 1;
+        break;
+      case '2':
+        this.data.data.cardClass = 'hunter';
+        this.data.data.p = 1;
+        break;
+      case '3':
+        this.data.data.cardClass = 'mage';
+        this.data.data.p = 1;
+        break;
+      case '4':
+        this.data.data.cardClass = 'paladin';
+        this.data.data.p = 1;
+        break;
+      case '5':
+        this.data.data.cardClass = 'priest';
+        this.data.data.p = 1;
+        break;
+      case '6':
+        this.data.data.cardClass = 'rogue';
+        this.data.data.p = 1;
+        break;
+      case '7':
+        this.data.data.cardClass = 'shaman';
+        this.data.data.p = 1;
+        break;
+      case '8':
+        this.data.data.cardClass = 'warlock';
+        this.data.data.p = 1;
+        break;
+      case '9':
+        this.data.data.cardClass = 'warrior';
+        this.data.data.p = 1;
+        break;
+      case '10':
+        this.data.data.cardClass = 'neutral';
+        this.data.data.p = 1;
+        break;
+    }
+    this.setData({
+      index2: e.detail.value,
+      topNum: 0
+    })
+    this.query()
+  },
+
+  costChange(e) {
+    // console.log(e);
+    switch (e.detail.value) {
+      case '0':
+        this.data.data.cost = '';
+        this.data.data.p = 1;
+        break;
+      case '1':
+        this.data.data.cost = '0';
+        this.data.data.p = 1;
+        break;
+      case '2':
+        this.data.data.cost = '1';
+        this.data.data.p = 1;
+        break;
+      case '3':
+        this.data.data.cost = '2';
+        this.data.data.p = 1;
+        break;
+      case '4':
+        this.data.data.cost = '3';
+        this.data.data.p = 1;
+        break;
+      case '5':
+        this.data.data.cost = '4';
+        this.data.data.p = 1;
+        break;
+      case '6':
+        this.data.data.cost = '5';
+        this.data.data.p = 1;
+        break;
+      case '7':
+        this.data.data.cost = '6';
+        this.data.data.p = 1;
+        break;
+      case '8':
+        this.data.data.cost = '7';
+        this.data.data.p = 1;
+        break;
+    }
+    this.setData({
+      index3: e.detail.value,
+      topNum: 0
+    })
+    this.query()
   },
 
   onShow() {
@@ -98,6 +234,30 @@ Page({
       })
     }
     this.onLoad(true)
+  },
+
+  addPage() {
+    //console.log("到底了");
+
+    if (this.data.maxPage <= 1) {
+      this.setData({
+        isBottom: true
+      })
+      return
+    } else {
+      var that = this
+      that.data.data.p += 1
+      // console.log(that.data.data.p);
+      // console.log(that.data.maxPage);
+      if (that.data.data.p > that.data.maxPage) {
+        that.data.data.p = that.data.maxPage
+        that.setData({
+          isBottom: true
+        })
+        return
+      }
+      this.query(true)
+    }
   },
 
 })
