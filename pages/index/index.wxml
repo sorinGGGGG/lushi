@@ -11,7 +11,7 @@
         <view style="margin-left:4%;width:28%" class="padding-sm">
             <picker bindchange="PickerChange" value="{{index}}" range="{{picker2}}">
                 <view class="picker flex justify-center">
-                    <text>{{index?picker[index]:'全职业'}}</text>
+                    <text>{{index?picker[index]:'恶魔猎手'}}</text>
                 </view>
             </picker>
         </view>
@@ -36,6 +36,10 @@
     </view>
 
     <scroll-view style="height:{{scrollHeight}}" scroll-y="true">
-        
+        <view class="grid col-2 padding-sm">
+            <view wx:for="{{list.cards}}" wx:key="item">
+                <image src="{{item.image}}"></image>
+            </view>
+        </view>
     </scroll-view>
 </view>
