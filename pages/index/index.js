@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    isBottom:false,
+    isBottom: false,
     maxPage: 0,
     index1: null,
     index2: null,
@@ -73,6 +73,10 @@ Page({
     if (flag != true) {
       this.query()
     }
+  },
+
+  search() {
+    this.query()
   },
 
   query(flag) {
@@ -260,4 +264,23 @@ Page({
     }
   },
 
+  bindText(e) {
+    this.data.data.keywords = e.detail.value
+    this.setData({
+      data: this.data.data
+    })
+  },
+
+  toDetails(e) {
+    var index = e.currentTarget.dataset.id
+    
+    var data = this.data.list
+    var list = data[index]
+
+    var listData = JSON.stringify(list)
+    // console.log(listData);
+    wx.navigateTo({
+      url: '../details/details?data=' + listData,
+    })
+  },
 })

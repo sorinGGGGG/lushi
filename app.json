@@ -2,6 +2,7 @@
   "pages": [
     
     "pages/index/index",
+    "pages/details/details",
     "pages/start/start",
     "pages/login/login",
     "pages/register/register",
@@ -50,7 +51,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小程序名",
+    "navigationBarTitleText": "卧云孤客-炉石查找器",
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {

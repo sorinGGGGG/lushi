@@ -1,0 +1,20 @@
+<view style="width:100vw;height:100vh">
+
+  <view style="width:70vw;margin-left:15vw;height:50vh;margin-top:5vh">
+    <image src="{{list.image}}" style="width:100%;height:100%;">
+
+    </image>
+  </view>
+
+  <view style="width:90vw;margin-left:5vw;height:35vh;margin-top:5vh">
+    <view style="width:90%;margin-left:5%;margin-top:5%">
+      <text class="text-bold">可搜索的关键词：</text>{{list.legacyKeywords}}
+    </view>
+    <view style="width:90%;margin-left:5%;margin-top:5%">
+      <text class="text-bold">画师：</text>{{list.artistName}}
+    </view>
+    <view style="width:90%;margin-left:5%;margin-top:5%">
+      <text class="text-bold">卡牌彩蛋：</text>{{list.flavorText}}
+    </view>
+  </view>
+</view>
