@@ -173,7 +173,16 @@ Page({
     this.query()
   },
 
-  toDetails(e) {
+  toHerosDetails(e) {
+    var index = e.currentTarget.dataset.id
+    var data = this.data.list[index]
+    // console.log(this.data.list[index]);
+    wx.navigateTo({ 
+      url: '../detailsHero/detailsHero?data1=' + data.id + '&data2=' + data.childIds[0],
+    })
+  },
+
+  toMinionDetails(e) {
     console.log(e.currentTarget.dataset.id);
   },
 

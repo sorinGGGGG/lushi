@@ -1,0 +1,13 @@
+<view style="width:100vw;height:100vh">
+
+    <view style="width:46vw;height:32vh;margin-left:27vw;margin-top:3vh;">
+        <image style="height:100%;width:100%;" src="{{list[0].image}}"></image>
+    </view>
+    <view style="width:46vw;margin-left:27vw;">
+        <text class="flex justify-center text-bold">{{list[0].name}}</text>
+    </view>
+    <view style="width:70vw;height:50vh;margin-left:15vw;margin-top:2vh">
+        <image style="height:100%;width:100%;" src="{{list[1].image}}"></image>
+    </view>
+    
+</view>

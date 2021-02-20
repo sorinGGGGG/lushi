@@ -23,7 +23,7 @@
     scroll-top="{{topNum}}">
     <view class="grid col-2 padding-sm">
         <view wx:for="{{list}}" wx:key="item">
-            <image src="{{item.image}}" bindtap="toDetails" data-id="{{item.id}}"></image>
+            <image src="{{item.image}}" bindtap="toHerosDetails" data-id="{{index}}"></image>
             <view class="flex justify-center"><text class="text-bold">{{item.name}}</text></view>
         </view>
     </view>
@@ -35,7 +35,7 @@
 <scroll-view wx:if="{{TabCur==1}}" style="height:{{scrollHeight}};background:#FFEFDB" scroll-y="true" scroll-top="{{topNum}}">
     <view class="grid col-2 padding-sm">
         <view wx:for="{{list}}" wx:key="item">
-            <image src="{{item.battlegrounds.image}}" bindtap="toDetails" data-id="{{item.id}}"></image>
+            <image src="{{item.battlegrounds.image}}" bindtap="toMinionDetails" data-id="{{item.id}}"></image>
         </view>
     </view>
     <view class="action flex padding-sm justify-center">

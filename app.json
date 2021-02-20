@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/classics/classics",
+    "pages/detailsHero/detailsHero",
+    "pages/detailsMinion/detailsMinion",
+    
     "pages/wargame/wargame",
     "pages/details/details",
     "pages/start/start",
