@@ -1,2 +1,22 @@
-<!--pages/IntelligentMatching/IntelligentMatching.wxml-->
-<text>酒馆战棋模块正在开发</text>
+<scroll-view id="mjltest" scroll-x class="bg-brown nav text-center">
+    <view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{choose}}" wx:key="item" bindtap="tabSelect"
+        data-id="{{index}}">
+        {{item}}
+    </view>
+</scroll-view>
+
+<scroll-view wx:if="{{TabCur==0}}" style="height:{{scrollHeight}};background:#FFEFDB" scroll-y="true" scroll-top="{{topNum}}">
+    <view class="grid col-2 padding-sm">
+        <view wx:for="{{list}}" wx:key="item">
+            <image src="{{item.image}}" bindtap="toDetails" data-id="{{item.id}}"></image>
+            <view class="flex justify-center"><text class="text-bold">{{item.name}}</text></view>
+        </view>
+    </view>
+    <view class="action flex padding-sm justify-center">
+        <text>已经到底了</text>
+    </view>
+</scroll-view>
+
+<scroll-view wx:if="{{TabCur==1}}" style="height:{{scrollHeight}}" scroll-y="true" scroll-top="{{topNum}}">
+    棋子
+</scroll-view>

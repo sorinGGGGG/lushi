@@ -5,26 +5,79 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: {},
+    TabCur: 0,
+    scrollHeight: "100vh;",
+    topHeight: 0,
+    topNum: 0,
+    choose: ['英雄', '棋子'],
+    data: {
+      sort: 'tier',
+      order: 'async',
+      type: 'hero',
+      minionType: '',
+      tier: 'all',
+      viewMode: 'table',
+      collectible: '0,1',
+      pageSize: 200,
+      locale: 'zh_cn'
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (flag) {
+    var that = this
+    //计算页面高度
+    var query = wx.createSelectorQuery();
+    //选择id
+    query.select('#mjltest').boundingClientRect()
+    query.exec(function (res) {
+      // console.log(res);
+      var height = getApp().globalData.height - res[0].height
+      that.setData({
+        scrollHeight: height + "px;",
+        topHeight: res[0].height + "px;"
+      })
+    })
 
+    if (flag != true) {
+      this.query()
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  query(flag) {
+    var that = this
+    wx.request({
+      url: getApp().globalData.baseUrl + 'action/hs/cards/battleround',
+      data: that.data.data,
+      method: "GET",
+      header: {
+        'Content-Type': 'application/json',
+        'Authorization': getApp().globalData.access_token
+      },
+      success(res) {
+        console.log(res);
+        var list = res.data.cards
 
+        that.setData({
+          list: list,
+        })
+      }
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+    })
+  },
+
+  toDetails(e){
+    console.log(e.currentTarget.dataset.id);
+  },
+
   onShow() {
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
@@ -32,35 +85,7 @@ Page({
         selected: 1
       })
     }
-    this.onLoad()
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+    this.onLoad(true)
   },
 
   /**

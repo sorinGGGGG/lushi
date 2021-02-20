@@ -1,5 +1,5 @@
 <view class="container">
-    <view id="mjltest" class="flex">
+    <view id="mjltest" class="flex bg-brown">
         <view style="margin-left:4%;width:28%" class="padding-sm">
             <picker bindchange="standardChange" value="{{index1}}" range="{{picker1}}">
                 <view class="picker flex justify-center">
@@ -25,17 +25,17 @@
         </view>
     </view>
 
-    <view id="mjltest2" class="cu-bar search bg-white">
+    <view id="mjltest2" class="cu-bar search bg-brown">
         <view class="search-form round">
             <text class="cuIcon-search"></text>
             <input type="text" placeholder="请输入关键字" bindinput="bindText" bindconfirm="search"></input>
         </view>
         <view class="action">
-            <button bindtap="search" class="cu-btn bg-green shadow-blur round">搜索</button>
+            <button bindtap="search" class="cu-btn bg-orange shadow-blur round">搜索</button>
         </view>
     </view>
 
-    <scroll-view style="height:{{scrollHeight}}" scroll-y="true" scroll-top="{{topNum}}" bindscrolltolower="addPage">
+    <scroll-view style="height:{{scrollHeight}};background:#FFEFDB" scroll-y="true" scroll-top="{{topNum}}" bindscrolltolower="addPage">
         <view class="grid col-2 padding-sm">
             <view wx:for="{{list}}" wx:key="item">
                 <image src="{{item.image}}" bindtap="toDetails" data-id="{{index}}"></image>
