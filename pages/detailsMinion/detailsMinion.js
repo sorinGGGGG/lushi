@@ -12,7 +12,51 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        var id = options.data1
+        var id2 = options.data2
+        // console.log(id);
+        var that = this
+        wx.request({
+            url: getApp().globalData.baseUrl + 'action/hs/cards/battleround',
+            data: {
+                ids: id,
+                tier: 'all',
+                pageSize: 200,
+                locale: 'zh_cn'
+            },
+            method: "GET",
+            header: {
+                'Content-Type': 'application/json',
+                'Authorization': getApp().globalData.access_token
+            },
+            success(res) {
+                wx.request({
+                    url: getApp().globalData.baseUrl + 'action/hs/cards/battleround',
+                    data: {
+                        ids: id2,
+                        tier: 'all',
+                        pageSize: 200,
+                        locale: 'zh_cn'
+                    },
+                    method: "GET",
+                    header: {
+                        'Content-Type': 'application/json',
+                        'Authorization': getApp().globalData.access_token
+                    },
+                    success(res2) {
 
+                        var list = {}
+                        list[0] = res.data.cards[0]
+                        list[1] = res2.data.cards[0]
+
+                        // console.log(list);
+                        that.setData({
+                            list: list,
+                        })
+                    }
+                });
+            }
+        });
     },
 
     /**

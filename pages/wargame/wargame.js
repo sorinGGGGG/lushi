@@ -183,7 +183,12 @@ Page({
   },
 
   toMinionDetails(e) {
-    console.log(e.currentTarget.dataset.id);
+    var index = e.currentTarget.dataset.id
+    var data = this.data.list[index]
+    // console.log(this.data.list[index]);
+    wx.navigateTo({ 
+      url: '../detailsMinion/detailsMinion?data1=' + data.id + '&data2=' + data.battlegrounds.upgradeId,
+    })
   },
 
   onShow() {
