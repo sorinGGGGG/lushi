@@ -131,7 +131,7 @@ Page({
         'Authorization': getApp().globalData.access_token
       },
       success(res) {
-        console.log(res);
+        // console.log(res);
         var list = res.data.cards
 
         that.setData({
