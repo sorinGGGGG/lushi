@@ -4,25 +4,25 @@ Component({
       color: "#000000",
       selectedColor: "#d4237a",
       list:  [{
-        "pagePath": "/pages/index/index",
+        "pagePath": "/pages/classics/classics",
         "text": "卡牌",
         "iconPath": "../img/one.png",
         "selectedIconPath": "../img/onechoose.png"
     },
     {
-        "pagePath": "/pages/IntelligentMatching/IntelligentMatching",
+        "pagePath": "/pages/wargame/wargame",
         "text": "战棋",
         "iconPath": "../img/two.png",
         "selectedIconPath": "../img/twochoose.png"
     },
     {
-        "pagePath": "/pages/PatentApplication/PatentApplication",
+        "pagePath": "/pages/cardGroup/cardGroup",
         "text": "流行卡组",
         "iconPath": "../img/three.png",
         "selectedIconPath": "../img/threechoose.png"
     },
     {
-        "pagePath": "/pages/serviceCentre/serviceCentre",
+        "pagePath": "/pages/sect/sect",
         "text": "战棋流派",
         "iconPath": "../img/four.png",
         "selectedIconPath": "../img/fourchoose.png"
