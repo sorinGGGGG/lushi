@@ -5,8 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    picker1: ['种族'],
-    picker2: ['星级','1', '2', '3', '4', '5', '6'],
+    index1: null,
+    index2: null,
+    picker1: ['种族', '恶魔', '海盗', '机械', '龙', '全部', '野兽', '鱼人', '元素'],
+    picker2: ['星级', '1', '2', '3', '4', '5', '6'],
     list: {},
     TabCur: 0,
     scrollHeight: "100vh;",
@@ -49,12 +51,73 @@ Page({
     }
   },
 
-  raceChange(){
-
+  raceChange(e) {
+    // console.log(e);
+    switch (e.detail.value) {
+      case '0':
+        this.data.data.minionType = '';
+        break;
+      case '1':
+        this.data.data.minionType = 'demon';
+        break;
+      case '2':
+        this.data.data.minionType = 'pirate';
+        break;
+      case '3':
+        this.data.data.minionType = 'mech';
+        break;
+      case '4':
+        this.data.data.minionType = 'dragon';
+        break;
+      case '5':
+        this.data.data.minionType = 'all';
+        break;
+      case '6':
+        this.data.data.minionType = 'beast';
+        break;
+      case '7':
+        this.data.data.minionType = 'murloc';
+        break;
+      case '8':
+        this.data.data.minionType = 'elemental';
+        break;
+    }
+    this.setData({
+      index1: e.detail.value,
+      topNum: 0
+    })
+    this.query()
   },
 
-  starsChange(){
-
+  starsChange(e) {
+    switch (e.detail.value) {
+      case '0':
+        this.data.data.tier = 'all';
+        break;
+      case '1':
+        this.data.data.tier = '1';
+        break;
+      case '2':
+        this.data.data.tier = '2';
+        break;
+      case '3':
+        this.data.data.tier = '3';
+        break;
+      case '4':
+        this.data.data.tier = '4';
+        break;
+      case '5':
+        this.data.data.tier = '5';
+        break;
+      case '6':
+        this.data.data.tier = '6';
+        break;
+    }
+    this.setData({
+      index2: e.detail.value,
+      topNum: 0
+    })
+    this.query()
   },
 
   query() {
@@ -82,7 +145,7 @@ Page({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
     })
-    if(e.currentTarget.dataset.id==0){
+    if (e.currentTarget.dataset.id == 0) {
       this.data.data = {
         sort: 'tier',
         order: 'async',
@@ -94,7 +157,7 @@ Page({
         pageSize: 200,
         locale: 'zh_cn'
       }
-    }else if(e.currentTarget.dataset.id==1){
+    } else if (e.currentTarget.dataset.id == 1) {
       this.data.data = {
         sort: 'tier',
         order: 'async',
@@ -110,7 +173,7 @@ Page({
     this.query()
   },
 
-  toDetails(e){
+  toDetails(e) {
     console.log(e.currentTarget.dataset.id);
   },
 

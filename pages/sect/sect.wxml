@@ -1,5 +1,5 @@
 <scroll-view style="height:{{scrollHeight}}" scroll-y="true">
-    <view class="cu-list menu-avatar">
+    <!-- <view class="cu-list menu-avatar">
         <view class="cu-item">
             <view class="cu-avatar round lg bg-pink"></view>
             <view class="content flex-sub">
@@ -26,5 +26,6 @@
 
     <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
     <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
-    <view class="bg-white margin-top-xs">11111111111111111111111111111</view>
+    <view class="bg-white margin-top-xs">11111111111111111111111111111</view> -->
+    战棋流派功能正在开发
 </scroll-view>
