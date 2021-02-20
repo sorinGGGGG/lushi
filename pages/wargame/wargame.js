@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    picker1: ['种族'],
+    picker2: ['星级','1', '2', '3', '4', '5', '6'],
     list: {},
     TabCur: 0,
     scrollHeight: "100vh;",
@@ -47,7 +49,15 @@ Page({
     }
   },
 
-  query(flag) {
+  raceChange(){
+
+  },
+
+  starsChange(){
+
+  },
+
+  query() {
     var that = this
     wx.request({
       url: getApp().globalData.baseUrl + 'action/hs/cards/battleround',
@@ -72,6 +82,32 @@ Page({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
     })
+    if(e.currentTarget.dataset.id==0){
+      this.data.data = {
+        sort: 'tier',
+        order: 'async',
+        type: 'hero',
+        minionType: '',
+        tier: 'all',
+        viewMode: 'table',
+        collectible: '0,1',
+        pageSize: 200,
+        locale: 'zh_cn'
+      }
+    }else if(e.currentTarget.dataset.id==1){
+      this.data.data = {
+        sort: 'tier',
+        order: 'async',
+        type: 'minion',
+        minionType: '',
+        tier: 'all',
+        viewMode: 'table',
+        collectible: '0,1',
+        pageSize: 200,
+        locale: 'zh_cn'
+      }
+    }
+    this.query()
   },
 
   toDetails(e){

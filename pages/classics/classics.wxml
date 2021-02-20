@@ -3,7 +3,7 @@
         <view style="margin-left:4%;width:28%" class="padding-sm">
             <picker bindchange="standardChange" value="{{index1}}" range="{{picker1}}">
                 <view class="picker flex justify-center">
-                    <text>{{index1?picker1[index1]:'狂野卡牌'}}</text>
+                    <text>{{index1?picker1[index1]:'狂野卡牌'}}▼</text>
                 </view>
             </picker>
         </view>
@@ -11,7 +11,7 @@
         <view style="margin-left:4%;width:28%" class="padding-sm">
             <picker bindchange="cardClassChange" value="{{index2}}" range="{{picker2}}">
                 <view class="picker flex justify-center">
-                    <text>{{index2?picker2[index2]:'恶魔猎手'}}</text>
+                    <text>{{index2?picker2[index2]:'恶魔猎手'}}▼</text>
                 </view>
             </picker>
         </view>
@@ -19,7 +19,7 @@
         <view style="margin-left:4%;width:28%" class="padding-sm">
             <picker bindchange="costChange" value="{{index3}}" range="{{picker3}}">
                 <view class="picker flex justify-center">
-                    <text>{{index3?picker3[index3]:'全水晶'}}</text>
+                    <text>{{index3?picker3[index3]:'全水晶'}}▼</text>
                 </view>
             </picker>
         </view>
