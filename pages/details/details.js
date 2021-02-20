@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     // console.log(options);
     var list = JSON.parse(options.data)
-    console.log(list);
+    // console.log(list);
     this.setData({
       list: list
     })
