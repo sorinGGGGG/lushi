@@ -12,8 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(options);
     var list = JSON.parse(options.data)
-    // console.log(list);
+    console.log(list);
     this.setData({
       list: list
     })

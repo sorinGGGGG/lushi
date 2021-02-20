@@ -275,11 +275,18 @@ Page({
     var index = e.currentTarget.dataset.id
     
     var data = this.data.list
-    var list = data[index]
+    // var list = data[index]
+
+    var list = {}
+    list.image = data[index].image
+    list.legacyKeywords = data[index].legacyKeywords
+    list.flavorText = data[index].flavorText
+    list.artistName = data[index].artistName.replace('&','/')
 
     var listData = JSON.stringify(list)
+    
     // console.log(listData);
-    wx.navigateTo({
+    wx.navigateTo({ 
       url: '../details/details?data=' + listData,
     })
   },
