@@ -74,12 +74,19 @@ Page({
   },
 
   search() {
+    this.setData({
+      topNum: 0
+    })
+    this.data.data.p = 1
     this.query()
   },
 
   query(flag) {
     var that = this
     that.data.data.t = Date.parse(new Date());
+    wx.showLoading({
+      title: '请稍后~',
+    })
     wx.request({
       url: getApp().globalData.baseUrl + 'action/cards/query',
       data: that.data.data,
@@ -103,6 +110,10 @@ Page({
           list: list,
           maxPage: res.data.totalPage
         })
+        wx.hideLoading()
+      },
+      fail(res) {
+        wx.hideLoading()
       }
     });
   },
@@ -235,7 +246,7 @@ Page({
         selected: 0
       })
     }
-    this.onLoad(true)
+    // this.onLoad(true)
   },
 
   addPage() {
@@ -271,7 +282,7 @@ Page({
 
   toDetails(e) {
     var index = e.currentTarget.dataset.id
-    
+
     var data = this.data.list
     // var list = data[index]
 
@@ -279,12 +290,12 @@ Page({
     list.image = data[index].image
     list.legacyKeywords = data[index].legacyKeywords
     list.flavorText = data[index].flavorText
-    list.artistName = data[index].artistName.replace('&','/')
+    list.artistName = data[index].artistName.replace('&', '/')
 
     var listData = JSON.stringify(list)
-    
+
     // console.log(listData);
-    wx.navigateTo({ 
+    wx.navigateTo({
       url: '../details/details?data=' + listData,
     })
   },

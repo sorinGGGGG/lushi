@@ -155,7 +155,7 @@ Page({
                 selected: 2
             })
         }
-        this.onLoad(true)
+        // this.onLoad(true)
     },
 
     toDetails(e) {

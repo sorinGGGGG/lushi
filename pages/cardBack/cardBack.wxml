@@ -1,2 +1,43 @@
-<!--pages/cardBack/cardBack.wxml-->
-<text>pages/cardBack/cardBack.wxml</text>
+<view class="container">
+    <view id="mjltest" class="flex bg-brown">
+        <view style="margin-left:4%;width:44%" class="padding-sm">
+            <picker bindchange="standardChange" value="{{index1}}" range="{{picker1}}">
+                <view class="picker flex justify-center">
+                    <text>{{index1?picker1[index1]:'全部'}}▼</text>
+                </view>
+            </picker>
+        </view>
+
+        <view style="margin-left:4%;width:44%" class="padding-sm">
+            <picker bindchange="cardClassChange" value="{{index2}}" range="{{picker2}}">
+                <view class="picker flex justify-center">
+                    <text>{{index2?picker2[index2]:'从新到旧'}}▼</text>
+                </view>
+            </picker>
+        </view>
+    </view>
+
+    <view id="mjltest2" class="cu-bar search bg-brown">
+        <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="请输入关键字" bindinput="bindText" bindconfirm="search"></input>
+        </view>
+        <view class="action">
+            <button bindtap="search" class="cu-btn bg-orange shadow-blur round">搜索</button>
+        </view>
+    </view>
+
+    <scroll-view style="height:{{scrollHeight}};background:#FFEFDB" scroll-y="true" scroll-top="{{topNum}}"
+        bindscrolltolower="addPage">
+        <view class="flex justify-center"><text>共有{{total}}个{{index1!=null&&picker1[index1]!='全部'?picker1[index1]:''}}卡背</text></view>
+        <view class="grid col-2 padding-sm">
+            <view wx:for="{{list}}" wx:key="item" class="margin-top-sm">
+                <image src="{{item.image}}" bindtap="toDetails" data-id="{{index}}"></image>
+                <view class="flex justify-center"><text class="text-bold">{{item.name}}</text></view>
+            </view>
+        </view>
+        <view class="action flex padding-sm justify-center">
+            <text>已经到底了</text>
+        </view>
+    </scroll-view>
+</view>

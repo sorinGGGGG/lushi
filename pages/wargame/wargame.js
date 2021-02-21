@@ -122,6 +122,9 @@ Page({
 
   query() {
     var that = this
+    wx.showLoading({
+      title: '请稍后~',
+    })
     wx.request({
       url: getApp().globalData.baseUrl + 'action/hs/cards/battleround',
       data: that.data.data,
@@ -137,6 +140,10 @@ Page({
         that.setData({
           list: list,
         })
+        wx.hideLoading()
+      },
+      fail(res) {
+        wx.hideLoading()
       }
     });
   },
@@ -202,7 +209,7 @@ Page({
         selected: 1
       })
     }
-    this.onLoad(true)
+    // this.onLoad(true)
   },
 
   /**

@@ -4,6 +4,7 @@
     "pages/fight/fight",
     "pages/cardBack/cardBack",
     "pages/detailsHero/detailsHero",
+    "pages/detailsCardBack/detailsCardBack",
     "pages/detailsMinion/detailsMinion",
     
     "pages/wargame/wargame",
