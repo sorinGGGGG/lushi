@@ -157,6 +157,10 @@ Page({
         pageSize: 200,
         locale: 'zh_cn'
       }
+      this.setData({
+        index1: null,
+        index2: null
+      })
     } else if (e.currentTarget.dataset.id == 1) {
       this.data.data = {
         sort: 'tier',
@@ -177,7 +181,7 @@ Page({
     var index = e.currentTarget.dataset.id
     var data = this.data.list[index]
     // console.log(this.data.list[index]);
-    wx.navigateTo({ 
+    wx.navigateTo({
       url: '../detailsHero/detailsHero?data1=' + data.id + '&data2=' + data.childIds[0],
     })
   },
@@ -186,7 +190,7 @@ Page({
     var index = e.currentTarget.dataset.id
     var data = this.data.list[index]
     // console.log(this.data.list[index]);
-    wx.navigateTo({ 
+    wx.navigateTo({
       url: '../detailsMinion/detailsMinion?data1=' + data.id + '&data2=' + data.battlegrounds.upgradeId,
     })
   },
