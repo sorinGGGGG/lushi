@@ -55,9 +55,9 @@
   },
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "卧云孤客-炉石查找器",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#a5673f",
+    "navigationBarTitleText": "炉石卡牌数据库--卧云孤客",
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

@@ -2,7 +2,7 @@ Component({
     data: {
       selected: 0,
       color: "#000000",
-      selectedColor: "#d4237a",
+      selectedColor: "#a5673f",
       list:  [{
         "pagePath": "/pages/classics/classics",
         "text": "经典模式",
