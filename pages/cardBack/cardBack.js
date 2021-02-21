@@ -5,8 +5,8 @@ const app = getApp()
 Page({
     data: {
         total: 0,
-        index1: null,
-        index2: null,
+        index1: 0,
+        index2: 0,
         list: {},
         picker1: ['全部', '活动', '基本', '黄金', '暴雪', '预购', '促销', '游戏', '电竞', '传说', '赛季', '英雄', '成就', '炉边聚会'],
         picker2: ['从新到旧', '从旧到新'],
@@ -80,7 +80,7 @@ Page({
         var that = this
         that.data.data.t = Date.parse(new Date());
         wx.showLoading({
-          title: '请稍后~',
+            title: '请稍后~',
         })
         wx.request({
             url: getApp().globalData.baseUrl + 'action/hs/cardbacks',
@@ -97,9 +97,10 @@ Page({
                     list: list,
                     total: res.data.cardCount
                 })
-                wx.hideLoading()    
-            },fail(res){
-                wx.hideLoading()        
+                wx.hideLoading()
+            },
+            fail(res) {
+                wx.hideLoading()
             }
         });
     },
@@ -150,11 +151,22 @@ Page({
                 this.data.data.cardBackCategory = 'fireside';
                 break;
         }
+
+        if (e.detail.value == this.data.index1) {
+            this.data.dataChange = false
+        } else {
+            this.data.dataChange = true
+        }
+
         this.setData({
             index1: e.detail.value,
             topNum: 0
         })
-        this.query()
+
+        if (this.data.dataChange) {
+            this.query()
+        }
+
     },
 
     cardClassChange(e) {
@@ -167,11 +179,22 @@ Page({
                 this.data.data.order = 'asc';
                 break;
         }
+
+        if (e.detail.value == this.data.index2) {
+            this.data.dataChange = false
+        } else {
+            this.data.dataChange = true
+        }
+
         this.setData({
             index2: e.detail.value,
             topNum: 0
         })
-        this.query()
+
+        if (this.data.dataChange) {
+            this.query()
+        }
+
     },
 
     onShow() {

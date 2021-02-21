@@ -6,10 +6,11 @@ Page({
   data: {
     isBottom: false,
     maxPage: 0,
-    index1: null,
-    index2: null,
-    index3: null,
+    index1: 0,
+    index2: 0,
+    index3: 0,
     list: {},
+    dataChange: false,
     picker1: ['狂野卡牌', '标准卡牌'],
     picker2: ['恶魔猎手', '德鲁伊', '猎人', '法师', '圣骑士', '牧师', '潜行者', '萨满', '术士', '战士', '中立'],
     picker3: ['全水晶', '0', '1', '2', '3', '4', '5', '6', '7+'],
@@ -130,11 +131,21 @@ Page({
         this.data.data.p = 1;
         break;
     }
+
+    if (e.detail.value == this.data.index1) {
+      this.data.dataChange = false
+    } else {
+      this.data.dataChange = true
+    }
+
     this.setData({
       index1: e.detail.value,
       topNum: 0
     })
-    this.query()
+    
+    if(this.data.dataChange){
+      this.query()
+    }
   },
 
   cardClassChange(e) {
@@ -185,11 +196,22 @@ Page({
         this.data.data.p = 1;
         break;
     }
+
+    if (e.detail.value == this.data.index2) {
+      this.data.dataChange = false
+    } else {
+      this.data.dataChange = true
+    }
+
     this.setData({
       index2: e.detail.value,
       topNum: 0
     })
-    this.query()
+    
+    if(this.data.dataChange){
+      this.query()
+    }
+
   },
 
   costChange(e) {
@@ -232,11 +254,22 @@ Page({
         this.data.data.p = 1;
         break;
     }
+
+    if (e.detail.value == this.data.index3) {
+      this.data.dataChange = false
+    } else {
+      this.data.dataChange = true
+    }
+
     this.setData({
       index3: e.detail.value,
       topNum: 0
     })
-    this.query()
+    
+    if(this.data.dataChange){
+      this.query()
+    }
+
   },
 
   onShow() {

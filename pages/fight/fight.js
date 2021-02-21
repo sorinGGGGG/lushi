@@ -4,8 +4,8 @@ const app = getApp()
 
 Page({
     data: {
-        index1: null,
-        index2: null,
+        index1: 0,
+        index2: 0,
         list: {},
         picker1: ['对决模式', '竞技模式'],
         picker2: ['恶魔猎手', '德鲁伊', '猎人', '法师', '圣骑士', '牧师', '潜行者', '萨满', '术士', '战士', '中立'],
@@ -61,7 +61,7 @@ Page({
         var that = this
         that.data.data.t = Date.parse(new Date());
         wx.showLoading({
-          title: '卡牌正在加载中',
+            title: '卡牌正在加载中',
         })
         wx.request({
             url: getApp().globalData.baseUrl + 'action/gameguide/cards',
@@ -80,11 +80,11 @@ Page({
                 })
                 wx.hideLoading()
             },
-            fail(res){
+            fail(res) {
                 wx.hideLoading()
             }
         });
-        
+
     },
 
     standardChange(e) {
@@ -97,11 +97,22 @@ Page({
                 this.data.data.cardSet = 'arena';
                 break;
         }
+
+        if (e.detail.value == this.data.index1) {
+            this.data.dataChange = false
+        } else {
+            this.data.dataChange = true
+        }
+
         this.setData({
             index1: e.detail.value,
             topNum: 0
         })
-        this.query()
+
+        if (this.data.dataChange) {
+            this.query()
+        }
+
     },
 
     cardClassChange(e) {
@@ -141,11 +152,22 @@ Page({
                 this.data.data.cardClass = 'neutral';
                 break;
         }
+
+        if (e.detail.value == this.data.index2) {
+            this.data.dataChange = false
+        } else {
+            this.data.dataChange = true
+        }
+
         this.setData({
             index2: e.detail.value,
             topNum: 0
         })
-        this.query()
+
+        if (this.data.dataChange) {
+            this.query()
+        }
+
     },
 
     onShow() {
