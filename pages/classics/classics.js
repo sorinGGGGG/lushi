@@ -13,9 +13,7 @@ Page({
     picker1: ['狂野卡牌', '标准卡牌'],
     picker2: ['恶魔猎手', '德鲁伊', '猎人', '法师', '圣骑士', '牧师', '潜行者', '萨满', '术士', '战士', '中立'],
     picker3: ['全水晶', '0', '1', '2', '3', '4', '5', '6', '7+'],
-    TabCur: 0,
     scrollHeight: "100vh;",
-    topHeight: 0,
     topNum: 0,
     data: {
       cardClass: 'demonhunter', //职业

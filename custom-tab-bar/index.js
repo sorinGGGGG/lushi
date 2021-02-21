@@ -17,7 +17,7 @@ Component({
     },
     {
         "pagePath": "/pages/fight/fight",
-        "text": "对决模式",
+        "text": "其他模式",
         "iconPath": "../img/three.png",
         "selectedIconPath": "../img/threechoose.png"
     },

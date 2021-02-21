@@ -11,10 +11,10 @@
       <text class="text-bold">可搜索的关键词：</text>{{list.legacyKeywords}}
     </view>
     <view style="width:90%;margin-left:5%;margin-top:5%">
-      <text class="text-bold">画师：</text>{{list.artistName}}
+      <text class="text-bold">画师：</text>{{list.artistName!=''?list.artistName:'(官方自己画的)'}}
     </view>
     <view style="width:90%;margin-left:5%;margin-top:5%">
-      <text class="text-bold">卡牌彩蛋：</text>{{list.flavorText}}
+      <text class="text-bold">卡牌彩蛋：</text>{{list.flavorText!=''?list.flavorText:'无彩蛋(或许是因为无法收集)'}}
     </view>
   </view>
 </view>
