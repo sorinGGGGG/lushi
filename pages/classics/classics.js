@@ -9,6 +9,7 @@ Page({
     index1: 0,
     index2: 0,
     index3: 0,
+    canSearch: true,
     list: {},
     dataChange: false,
     picker1: ['狂野卡牌', '标准卡牌'],
@@ -75,11 +76,24 @@ Page({
   },
 
   search() {
+    var that = this
     this.setData({
       topNum: 0
     })
-    this.data.data.p = 1
-    this.query()
+    
+    if (this.data.canSearch) {
+      this.data.data.p = 1
+      this.query()
+      this.data.canSearch = false
+      setTimeout(function () {
+        that.data.canSearch = true
+      }, 2000)
+    } else {
+      wx.showToast({
+        title: '请勿频繁提交!',
+        icon: null
+      })
+    }
   },
 
   query(flag) {
@@ -142,8 +156,8 @@ Page({
       index1: e.detail.value,
       topNum: 0
     })
-    
-    if(this.data.dataChange){
+
+    if (this.data.dataChange) {
       this.query()
     }
   },
@@ -207,8 +221,8 @@ Page({
       index2: e.detail.value,
       topNum: 0
     })
-    
-    if(this.data.dataChange){
+
+    if (this.data.dataChange) {
       this.query()
     }
 
@@ -265,8 +279,8 @@ Page({
       index3: e.detail.value,
       topNum: 0
     })
-    
-    if(this.data.dataChange){
+
+    if (this.data.dataChange) {
       this.query()
     }
 

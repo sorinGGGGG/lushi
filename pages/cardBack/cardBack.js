@@ -7,6 +7,7 @@ Page({
         total: 0,
         index1: 0,
         index2: 0,
+        canSearch: true,
         list: {},
         picker1: ['全部', '活动', '基本', '黄金', '暴雪', '预购', '促销', '游戏', '电竞', '传说', '赛季', '英雄', '成就', '炉边聚会'],
         picker2: ['从新到旧', '从旧到新'],
@@ -70,10 +71,23 @@ Page({
     },
 
     search() {
+        var that = this
         this.setData({
             topNum: 0
         })
-        this.query()
+
+        if (this.data.canSearch) {
+            this.query()
+            this.data.canSearch = false
+            setTimeout(function () {
+                that.data.canSearch = true
+            }, 2000)
+        } else {
+            wx.showToast({
+                title: '请勿频繁提交!',
+                icon: null
+            })
+        }
     },
 
     query() {
