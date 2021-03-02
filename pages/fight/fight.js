@@ -72,7 +72,7 @@ Page({
                 'Authorization': getApp().globalData.access_token
             },
             success(res) {
-                var list = res.data.data
+                var list = res.data.data.list
                 // console.log(list);
 
                 that.setData({
